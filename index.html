@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test for ink ascent/descent</title>
+    <meta charset="utf-8"/>
+    <style>
+      @font-face {
+          font-family: 'InkAscentDescent';
+          src: url('ink-ascent-descent-test.woff');
+      }
+      math {
+          font: 25px InkAscentDescent;
+      }
+      .A { color: red; }
+      .B { color: green; }
+      .C { color: blue; }
+    </style>
+  </head>
+  <body>
+    <h1>Test for ink ascent/descent</h1>
+
+    <section>
+      <h2>Text A, B, C and √</h2>
+      <p style="font-family: monospace">__baseline__<math><mtext class="A">A</mtext></math>__<math><mtext class="B">B</mtext></math>__<math><mtext class="C">C</mtext></math>__<math><mtext>√</mtext></math>__baseline__</p>
+    </section>
+
+    <section>
+      <h2>Fraction AAA/AAA</h2>
+      <math display="block">
+      <mfrac>
+        <mtext class="A">AAA</mtext>
+        <mtext class="A">AAA</mtext>
+      </mfrac>
+      </math>
+    </section>
+
+    <section>
+      <h2>Fraction BBB/BBB</h2>
+      <math display="block">
+        <mfrac>
+          <mtext class="B">BBB</mtext>
+          <mtext class="B">BBB</mtext>
+        </mfrac>
+      </math>
+    </section>
+
+    <section>
+      <h2>Fraction CCC/CCC</h2>
+      <math display="block">
+        <mfrac>
+          <mtext class="C">CCC</mtext>
+          <mtext class="C">CCC</mtext>
+        </mfrac>
+      </math>
+    </section>
+
+    <section>
+      <h2>Fraction ABC/ABC</h2>
+      <math display="block">
+        <mfrac>
+          <mrow>
+            <mtext class="A">A</mtext>
+            <mtext class="B">B</mtext>
+            <mtext class="C">C</mtext>
+          </mrow>
+          <mrow>
+            <mtext class="A">A</mtext>
+            <mtext class="B">B</mtext>
+            <mtext class="C">C</mtext>
+          </mrow>
+        </mfrac>
+      </math>
+    </section>
+
+    <section>
+      <h2>Square root of AAA</h2>
+      <math display="block">
+        <msqrt>
+          <mtext class="A">AAA</mtext>
+        </msqrt>
+      </math>
+    </section>
+
+    <section>
+      <h2>Square root of BBB</h2>
+      <math display="block">
+        <msqrt>
+          <mtext class="B">BBB</mtext>
+        </msqrt>
+      </math>
+    </section>
+
+    <section>
+      <h2>Square root of CCC</h2>
+      <math display="block">
+        <msqrt>
+          <mtext class="C">CCC</mtext>
+        </msqrt>
+      </math>
+    </section>
+
+
+    <section>
+      <h2>Fraction AAA/√CCC</h2>
+      <math display="block">
+        <mfrac>
+          <mtext class="A">AAA</mtext>
+          <mstyle displaystyle="true">
+            <msqrt><mtext class="C">CCC</mtext></msqrt>
+          </mstyle>
+        </mfrac>
+      </math>
+    </section>
+
+  </body>
+</html>

@@ -1,0 +1,55 @@
+\documentclass{article}
+\title{Test for ink ascent/descent}
+\author{Frédéric Wang}
+
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\setmathfont{ink-ascent-descent-test.otf}
+
+\newcommand{\A}{\color{red}{\text A}} 
+\newcommand{\B}{\color{green}{\mathup B}} 
+\newcommand{\C}{\color{blue}{\mathup C}} 
+
+\begin{document}
+\maketitle
+
+\section{Test for ink ascent/descent}
+
+\subsection{Text A, B, C and √}
+
+\_\_baseline\_\_$\A$\_\_$\B$\_\_$\C$\_\_$√$\_\_baseline\_\_
+
+\subsection{Fraction AAA/AAA}
+
+$$\frac{\A\A\A}{\A\A\A}$$
+
+\subsection{Fraction BBB/BBB}
+
+$$\frac{\B\B\B}{\B\B\B}$$
+
+\subsection{Fraction CCC/CCC}
+
+$$\frac{\C\C\C}{\C\C\C}$$
+
+\subsection{Fraction ABC/ABC}
+
+$$\frac{\A\B\C}{\A\B\C}$$
+
+\subsection{Square root of AAA}
+
+$$\sqrt{\A\A\A}$$
+
+\subsection{Square root of BBB}
+
+$$\sqrt{\B\B\B}$$
+
+\subsection{Square root of CCC}
+
+$$\sqrt{\C\C\C}$$
+
+\subsection{Fraction AAA/√CCC}
+
+$$\frac{\A\A\A}{\displaystyle \sqrt{\C\C\C}}$$
+
+\end{document}
