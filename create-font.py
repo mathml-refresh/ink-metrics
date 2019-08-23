@@ -35,6 +35,9 @@ def createSpace(aFont, em):
     g.mathKern.topRight = tuple([(0,0)])
     aFont[ord(" ")].horizontalVariants = "space"
     aFont[ord(" ")].verticalVariants = "space"
+    f.addLookup("gsub", "gsub_single", (), (("ssty", (("math", ("dflt")), ("latn", ("dflt")),)),))
+    f.addLookupSubtable("gsub", "gsub_n")
+    f["space"].addPosSub("gsub_n", "space")
 
 em = 1000
 name="ink-ascent-descent-test"
@@ -47,9 +50,8 @@ f.encoding = "UnicodeFull"
 
 f.em = em
 f.ascent = f.descent = em
-f.hhea_ascent = f_typoascent = f.os2_winascent = em
-f.descent = f.hhea_descent = em
-f.os2_typodescent = f.os2_windescent = em
+f.hhea_ascent = f.os2_typoascent = f.os2_winascent = em
+f.hhea_descent = f.os2_typodescent = f.os2_windescent = em
 f.hhea_ascent_add = f.hhea_descent_add = 0
 f.os2_typoascent_add = f.os2_typodescent_add = 0
 f.os2_winascent_add = f.os2_windescent_add = 0
@@ -63,12 +65,6 @@ drawRectangleGlyph(g, em, 0, em)
 g = f.createChar(ord('C'))
 drawRectangleGlyph(g, em, em/2, em/2)
 createStretchyRadical(f, em)
-
-f.addLookup("gsub", "gsub_single", (), (("ssty", (("math", ("dflt")), ("latn", ("dflt")),)),))
-f.addLookupSubtable("gsub", "gsub_n")
-f["A"].addPosSub("gsub_n", "A")
-f["B"].addPosSub("gsub_n", "B")
-f["C"].addPosSub("gsub_n", "C")
 
 f.math.AxisHeight = 0
 f.math.FractionDenominatorDisplayStyleGapMin = em
