@@ -75,10 +75,10 @@ f.math.FractionNumeratorDisplayStyleGapMin = em
 f.math.FractionNumeratorDisplayStyleShiftUp = 2 * em
 f.math.FractionNumeratorGapMin = em
 f.math.FractionNumeratorShiftUp = 2 * em
-f.math.FractionRuleThickness = em / 2
+f.math.FractionRuleThickness = em
 f.math.RadicalDisplayStyleVerticalGap = em
 f.math.RadicalExtraAscender = 2 * em
-f.math.RadicalRuleThickness = em / 2
+f.math.RadicalRuleThickness = em
 f.math.RadicalVerticalGap = em
 
 f.generate("%s.otf" % name)
