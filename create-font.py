@@ -49,12 +49,12 @@ f.fullname = name
 f.encoding = "UnicodeFull"
 
 f.em = em
-f.ascent = f.descent = em
-f.hhea_ascent = f.os2_typoascent = f.os2_winascent = em
-f.hhea_descent = f.os2_typodescent = f.os2_windescent = em
-f.hhea_ascent_add = f.hhea_descent_add = 0
-f.os2_typoascent_add = f.os2_typodescent_add = 0
-f.os2_winascent_add = f.os2_windescent_add = 0
+f.ascent = f.descent = em / 2
+f.hhea_ascent = f.os2_typoascent = f.hhea_descent = f.os2_typodescent = em / 2
+f.os2_winascent = f.os2_windescent = em
+f.hhea_ascent_add = f.hhea_descent_add = f.hhea_linegap = 0
+f.os2_typoascent_add = f.os2_typodescent_add = f.os2_typolinegap = 0
+f.os2_winascent_add = f.os2_windescent_add = f.vhea_linegap = 0
 f.os2_use_typo_metrics = True
 
 createSpace(f, em)
